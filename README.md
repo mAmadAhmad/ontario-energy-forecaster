@@ -13,7 +13,7 @@ The application might take some time to load frontend(streamlit hosted) and back
 * **Modeling:** XGBoost, Scikit-Learn (Isolation Forest), Pandas
 * **Backend:** FastAPI, Uvicorn, Pydantic
 * **Frontend:** Streamlit, Plotly
-* **DevOps:** Render (Cloud Deployment), Git
+* **DevOps:** Render (Cloud Deployment), Git, CI/CD automated, Render and Streamlit auto detects new commits and deploy latest version of application.
 
 ## 🧠 Model Architecture
 
