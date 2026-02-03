@@ -1,14 +1,11 @@
 # ⚡ Ontario Energy Demand Forecaster
 
-A production-grade Machine Learning microservice that forecasts hourly energy demand for the Ontario power grid. This system combines **XGBoost** for accurate regression with **Isolation Forests** for unsupervised anomaly detection to ensure grid reliability.
+A production-grade Machine Learning microservice that forecasts hourly energy demand for the Ontario power grid. This system combines **XGBoost** for accurate regression with **Isolation Forests** for unsupervised anomaly detection to ensure grid reliability. It is hard or impossible for me to get real time data from Ontario Energy Provider company IESO than I could have automated model retraining and provide real time predictions for current hour based on real data of previous day, however they do provide real time forecasts themselves along with prices here [![IESO Market Data]](https://www.ieso.ca/market-data),   
 
-[![Live App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ontario-energy-forecaster.streamlit.app/)
+Check my live application here->[![Live App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ontario-energy-forecaster.streamlit.app/)  
+The application might take some time to load frontend(streamlit hosted) and backend(Render hosted) as they are hosted on free tiers for demo purposes, servers turn down with no use for free tiers. Click on "Yes, get this app backup" thanks for your patience and time.  
 
-## 🚀 Key Features
-
-* **High-Accuracy Forecasting:** Predicts grid load (MW) with **<4% MAPE** (Mean Absolute Percentage Error).
-* **Grid Watchdog (Anomaly Detection):** Uses unsupervised learning to flag abnormal grid conditions (e.g., extreme weather events, outages) in real-time.
-* **Scenario Simulation:** Frontend interface allows users to load historical "Ground Truth" scenarios to unit-test the model live.
+* **Scenario Simulation:** Frontend interface allows users to load historical "Ground Truth" scenarios to unit-test the model live, this happens on real historic data and you can also see how much the model drifts away from actual demands for that time of the day in MW. I picked few examples from the test set to showcase real scenario, rather than putting data randomly, If you have accurate new data you are most welcome. 
 * **Microservices Architecture:** Decoupled backend (FastAPI) and frontend (Streamlit) for independent scaling.
 
 ## 🛠️ Tech Stack
@@ -16,7 +13,7 @@ A production-grade Machine Learning microservice that forecasts hourly energy de
 * **Modeling:** XGBoost, Scikit-Learn (Isolation Forest), Pandas
 * **Backend:** FastAPI, Uvicorn, Pydantic
 * **Frontend:** Streamlit, Plotly
-* **DevOps:** Docker, Render (Cloud Deployment), Git
+* **DevOps:** Render (Cloud Deployment), Git
 
 ## 🧠 Model Architecture
 
@@ -62,7 +59,7 @@ The system utilizes a dual-model approach:
     ```
 
 ## 📊 Performance Metrics
-
+Baseline was basically predicting that if previous day for hour 4 we had i.e. 14000MW demand than today for hour 4 we also have 14000MW demand, this dumb model had 5.15% MAPE. Here are my metrics.  
 | Metric | Baseline (Persistence) | Our Model (XGBoost) | Improvement |
 | :--- | :--- | :--- | :--- |
 | **MAPE** | 5.15% | **3.95%** | **+1.2%** |
