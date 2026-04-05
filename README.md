@@ -1,7 +1,8 @@
 # Ontario Energy Demand Forecaster
 
 A machine learning microservice that forecasts hourly energy demand for the Ontario power grid, combining XGBoost regression with Isolation Forest anomaly detection.
-It is hard or impossible for me to get real time data from Ontario Energy Provider company IESO than I could have automated model retraining and provide real time predictions for current hour based on real data of previous day, however they do provide real time forecasts themselves along with prices here [![IESO Market Data]](https://www.ieso.ca/market-data),   
+
+It is hard or impossible for me to get real time data from Ontario Energy Provider company IESO than I could have automated model retraining and provide real time predictions for current hour based on real data of previous day, however they do provide real time forecasts themselves along with prices here [![IESO Market Data]](https://www.ieso.ca/market-data),
 
 Check my live application here->[![Live App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ontario-energy-forecaster.streamlit.app/)  
 The application might take some time to load frontend(streamlit hosted) and backend(Render hosted) as they are hosted on free tiers for demo purposes. Click on "Yes, get this app backup" thanks for your patience and time.  
